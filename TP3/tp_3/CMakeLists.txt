@@ -15,17 +15,17 @@ endif ()
 # Sources #-----------------------------------------------------------------------------------------
 set ( PROJECT_HEADERS
       src/chaine.hpp
-      #src/cosinus.hpp
+      src/cosinus.hpp
       src/demangle.hpp
-      #src/exception.hpp
-      #src/exponentielle.hpp
-      #src/factorielle.hpp
-      #src/puissance.hpp
+      src/exception.hpp
+      src/exponentielle.hpp
+      src/factorielle.hpp
+      src/puissance.hpp
       
     )
 
 set ( PROJECT_SOURCES
-      src/chaine.cpp
+      src/exception.cpp
     )
 
 set ( TEST_HEADERS

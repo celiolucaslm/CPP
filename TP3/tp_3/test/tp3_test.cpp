@@ -6,8 +6,8 @@
 #include <demangle.hpp>
 
 #include <chaine.hpp>
-//#include <cosinus.hpp>
-//#include <exponentielle.hpp>
+#include <cosinus.hpp>
+#include <exponentielle.hpp>
 
 // Tests //-----------------------------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ TEST_CASE ( "TP3_Chaine::Exception" ) {
 }
 
 //------------------------------------------------------------------------------------------------ 2
-/*TEST_CASE ( "TP3_Chaine::ConversionSimple" ) {
+TEST_CASE ( "TP3_Chaine::ConversionSimple" ) {
  std::string n = "Smith";
  int i = 10;
  double d = 13.27;
@@ -86,10 +86,10 @@ TEST_CASE ( "TP3_Chaine::Exception" ) {
  }
 
  REQUIRE ( erreur == 4 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 3
-/*TEST_CASE ( "TP3_Chaine::ConversionVariadic" ) {
+TEST_CASE ( "TP3_Chaine::ConversionVariadic" ) {
  std::string n = "Smith";
  int i = 10;
  double d = 13.27;
@@ -117,10 +117,10 @@ TEST_CASE ( "TP3_Chaine::Exception" ) {
  }
 
  REQUIRE ( erreur == 2 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 4
-/*TEST_CASE ( "TP3_Chaine::ConversionTuple1" ) {
+TEST_CASE ( "TP3_Chaine::ConversionTuple1" ) {
  std::tuple<std::string,int,double>      t1{"Smith",10,13.27};
  std::tuple<std::string,int,double,long> t2{"Smith",10,13.27,100};
 
@@ -146,14 +146,14 @@ TEST_CASE ( "TP3_Chaine::Exception" ) {
  }
 
  REQUIRE ( erreur == 2 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 5
 using Identite = std::tuple<std::string,std::string>; // {nom,prenom}
 using Date = std::tuple<int,int,int>; // {jour,mois,annee}
 using Coordonnees = std::tuple<double,double>; // {x,y}
 
-/*TEST_CASE ( "TP3_Chaine::ConversionTuple2" ) {
+TEST_CASE ( "TP3_Chaine::ConversionTuple2" ) {
  Identite    i = { "Smith", "John" };
  Date        d = { 13, 07, 2003 };
  Coordonnees c = { 1.234, 6.789 };
@@ -177,12 +177,12 @@ using Coordonnees = std::tuple<double,double>; // {x,y}
             || chaine(c) == "1.234000 6.789000 ") == true );
 
  REQUIRE ( erreur == 0 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 6
 using Personne = std::tuple<Identite,Date>;
 
-/*TEST_CASE ( "TP3_Chaine::ConversionCompositionTuples" ) {
+TEST_CASE ( "TP3_Chaine::ConversionCompositionTuples" ) {
  Identite i = { "Smith", "John" };
  Date     d = { 13, 07, 2003 };
  Personne p = { i,d };
@@ -196,43 +196,43 @@ using Personne = std::tuple<Identite,Date>;
             || chaine(p) == "Smith John  13 7 2003  ") == true );
 
  REQUIRE ( erreur == 0 );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 7
-/*TEST_CASE ( "TP3_Metaprog::Factorielle" ) {
+TEST_CASE ( "TP3_Metaprog::Factorielle" ) {
  unsigned long f1 = Factorielle<1>::valeur;
  unsigned long f5 = Factorielle<5>::valeur;
 
  REQUIRE ( f1 == 1u );
  REQUIRE ( f5 == 5u*4u*3u*2u );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 8
-/*TEST_CASE ( "TP3_Metaprog::Puissance" ) {
+TEST_CASE ( "TP3_Metaprog::Puissance" ) {
  REQUIRE ( Puissance<0>::valeur(3.0) == Approx(1.0) );
  REQUIRE ( Puissance<1>::valeur(3.0) == Approx(3.0) );
  REQUIRE ( Puissance<4>::valeur(3.0) == Approx(3.0*3.0*3.0*3.0) );
-}*/
+}
 
 //------------------------------------------------------------------------------------------------ 9
-/*TEST_CASE ( "TP3_Metaprog::Exponentielle" ) {
+TEST_CASE ( "TP3_Metaprog::Exponentielle" ) {
  REQUIRE ( Exponentielle<4>::valeur(0.0) == Approx(std::exp(0.0)).epsilon(1e-3) );
  REQUIRE ( Exponentielle<12>::valeur(-2.5) == Approx(std::exp(-2.5)).epsilon(1e-3) );
  REQUIRE ( Exponentielle<7>::valeur(1.4) == Approx(std::exp(1.4)).epsilon(1e-3) );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 10
-/*TEST_CASE ( "TP3_Metaprog::Cosinus" ) {
+TEST_CASE ( "TP3_Metaprog::Cosinus" ) {
  REQUIRE ( Cosinus<1>::valeur(0.0) == Approx(std::cos(0.0)).epsilon(1e-3) );
  REQUIRE ( Cosinus<4>::valeur(-2.0) == Approx(std::cos(-2.0)).epsilon(1e-3) );
  REQUIRE ( Cosinus<3>::valeur(1.0) == Approx(std::cos(1.0)).epsilon(1e-3) );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 11
-/*TEST_CASE ( "TP3_Metaprog::Sinus" ) {
+TEST_CASE ( "TP3_Metaprog::Sinus" ) {
  REQUIRE ( Sinus<3>::valeur(0.0) == Approx(std::sin(0.0)).epsilon(1e-3) );
  REQUIRE ( Sinus<5>::valeur(-2.0) == Approx(std::sin(-2.0)).epsilon(1e-3) );
  REQUIRE ( Sinus<4>::valeur(1.0) == Approx(std::sin(1.0)).epsilon(1e-3) );
-}*/
+}
 
 // Fin //-------------------------------------------------------------------------------------------

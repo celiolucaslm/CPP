@@ -1,0 +1,10 @@
+Para escrever uma classe ou struct template:
+
+template <typename T> class [struct] {};
+
+Para usar uma funcao recursiva basta declarar dentro do codigo
+
+A recursao estatica acontece de tras para frente, ou seja, a partir do caso base o compilador calcula o restante
+
+Para especializar um template devemos escrever: template<> struct NAME<CASO ESPECIFICO>
+

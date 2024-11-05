@@ -1,4 +1,4 @@
-#include "chaine.hpp"
+#include "exception.hpp"
 
 ExceptionChaine::ExceptionChaine(const std::string& type) {
     message = "Conversion en chaine impossible pour '" + demangle(type) + "'";
